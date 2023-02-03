@@ -7,7 +7,7 @@ module.exports = {
   JWT_SECRET: process.env.JWT_SECRET || "PasSwoRd123",
   MEM_TYPE: process.env.MEM_TYPE || "MEM",
   SECRET: process.env.SECRET || "secret" ,
-  USERNAME_GMAIL: process.env.USERNAME_GMAIL,
+  MAIL_GMAIL: process.env.MAIL_GMAIL,
   PASS_GMAIL: process.env.PASS_GMAIL,
   NODEMAILER_EMAIL: process.env.NODEMAILER_EMAIL,
   NODEMAILER_EMAIL_PASSW: process.env.NODEMAILER_EMAIL_PASSW,

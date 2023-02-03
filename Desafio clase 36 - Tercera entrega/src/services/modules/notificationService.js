@@ -1,7 +1,6 @@
-const { TWILIO_AUTH_TOKEN, ACCOUNT_TWILIO_SID, TWILIO_NUM_SMS_FROM, TWILIO_NUM_WP_FROM, TWILIO_NUM_TO } = require("../../config/globals");
+const { TWILIO_AUTH_TOKEN, ACCOUNT_TWILIO_SID, TWILIO_NUM_SMS_FROM, TWILIO_NUM_WP_FROM, TWILIO_NUM_TO, MAIL_GMAIL, PASS_GMAIL, NODEMAILER_EMAIL, NODEMAILER_EMAIL_PASSW } = require("../../config/globals");
 const twilioClient = require("twilio")(ACCOUNT_TWILIO_SID, TWILIO_AUTH_TOKEN);
 const nodemailer = require("nodemailer");
-const { NODEMAILER_EMAIL, NODEMAILER_EMAIL_PASSW } = require("../../config/globals");
 const { newUserEmailContent } = require("../../utils/emailHTML");
 const logger = require("../../utils/logger");
 
@@ -15,19 +14,35 @@ const transporterEthereal = nodemailer.createTransport({
   },
 });
 
+// const transporterGmail = nodemailer.createTransport({
+//   service: 'gmail',
+//   port: 587,
+//   auth: {
+//       user: MAIL_GMAIL,
+//       pass: PASS_GMAIL
+//   }
+// });
+
 const sendMailSignup = async (user) => {
   await transporterEthereal.sendMail({
-    from: "PC Market",
+    from: "QuieroVino",
     to: user.email,
     subject: `Nuevo registro`,
     html: newUserEmailContent(user),
   });
+  // await transporterGmail.sendMail({
+  //   from: "QuieroVino",
+  //   to: user.email,
+  //   subject: `Nuevo registro`,
+  //   html: newUserEmailContent(user),
+  // });
+  logger.info("Alerta de mail por nuevo usuario enviada");
 };
 
 const sendNotificationOrder = async (first_name, email, total, products) => {
   try {
     await transporterEthereal.sendMail({
-      from: "PC Market",
+      from: "QuieroVino",
       to: email,
       subject: `QuieroVino: Nuevo pedido de ${first_name} (${email})`,
       html: `<h3>Detalle de compra en Quiero Vino: </h3>
@@ -40,7 +55,22 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
                 </ul>    
             `,
     });
-    logger.info("Alerta de mail enviada");
+    // await transporterGmail.sendMail({
+    //   from: "QuieroVino",
+    //   to: email,
+    //   subject: `QuieroVino: Nuevo pedido de ${first_name} (${email})`,
+    //   html: `<h3>Detalle de compra en Quiero Vino: </h3>
+    //             <p>Valor total: $${total}</p>
+    //             <ul>Productos: 
+    //                 ${products.map((product) => {
+    //                   return `<li>Nombre: ${product.name} - Precio: $${product.price} - Cantidad: ${product.qty} </li>
+    //                   `;
+    //                 })}
+    //             </ul>    
+    //         `,
+    // });
+
+    logger.info("Alerta de mail por nueva orden enviada");
 
     await twilioClient.messages.create({
       body: `
@@ -57,7 +87,7 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
       from: "whatsapp:"+TWILIO_NUM_WP_FROM,
       to: "whatsapp:+549"+TWILIO_NUM_TO,
     });
-    logger.info("Alerta de whatsapp enviado");
+    logger.info("Alerta de whatsapp por nueva orden enviada");
 
     await twilioClient.messages.create({
       body: `
@@ -68,7 +98,7 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
       from: TWILIO_NUM_SMS_FROM,
       to: "+54"+TWILIO_NUM_TO,
     });
-    logger.info("Alerta de sms enviado");
+    logger.info("Alerta de sms por nueva orden enviada");
 
   } catch (error) {
     logger.error(`Error al enviar mail: ${error}`);
