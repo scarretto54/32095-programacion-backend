@@ -6,7 +6,8 @@
   "scripts": {
     "start": "pm2-runtime start ./src/server/index.js -i max",
     "watch": "set NODE_ENV=development&& npx nodemon ./src/server/index.js",
-    "debug": "node --inspect ./src/server/index.js"
+    "debug": "node --inspect ./src/server/index.js",
+    "test": "node benchmark.js"    
   },
   "jest": {
     "testEnvironment": "node"
@@ -14,6 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "0x": "^5.4.1",
+    "artillery": "^2.0.0-29",
+    "autocannon": "^7.10.0",
     "bcrypt": "5.0.1",
     "compression": "1.7.4",
     "connect-mongo": "4.6.0",
@@ -28,7 +32,7 @@
     "nodemailer": "6.7.0",
     "passport": "0.5.0",
     "passport-local": "1.0.0",
-    "pm2": "5.1.2",
+    "pm2": "^5.2.2",
     "socket.io": "4.1.3",
     "sweetalert2": "11.1.10",
     "twilio": "^3.84.1",
