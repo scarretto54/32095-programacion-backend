@@ -1,0 +1,132 @@
+<section>
+  <div class="container">
+    <div class="card glass">
+      <div class="card-body">
+        <div class="row">
+          <h1>Registrate en Quiero Vino</h1>
+          <form id="signupForm" action="/signup" method="post" enctype="multipart/form-data" >
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <label for="userNameLogIn" class="form-label mt-4">
+                  Añade tu email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="Username"
+                  name="email"
+                  autocomplete="username"
+                  placeholder="email@example.com"
+                  required
+                />
+
+                <label for="passwordSignUp" class="form-label mt-4 d-block">
+                  Añada su contraseña
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordSignUp"
+                  aria-describedby="Password"
+                  name="password"
+                  autocomplete="new-password"
+                  required
+                />
+                <label
+                  for="repeatPasswordSignUp"
+                  class="form-label mt-4 d-block"
+                >
+                  Repita su contraseña
+                </label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="repeatPasswordSignUp"
+                  aria-describedby="Password"
+                  name="passwordRepeat"
+                  autocomplete="new-password"
+                  required
+                /> 
+                <label for="userAvatar" class="form-label mt-4 d-block">
+                Añade su foto avatar
+                </label>
+                <input
+                  type="file"                
+                  name="avatarFile"
+                  id="userAvatar"
+                  class="form-control-file d-block"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6" id="second-col-signup">
+                <label for="nameLogIn" class="form-label mt-4">
+                  Añade tu nombre
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  aria-describedby="Name"
+                  name="firstName"
+                  placeholder="Ingrese nombre"
+                  required
+                />
+                <label for="lastName" class="form-label mt-4">Añade tu apellido</label>
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  class="form-control"
+                  placeholder="Ingrese apellido"
+                  required
+                />
+                <label for="userAge" class="form-label mt-4">
+                  Añade tu Edad</label>
+                <input
+                  type="text"
+                  name="age"
+                  id="age"
+                  class="form-control"
+                  placeholder="Ingrese Dirección"
+                  required
+                />  
+                <label for="phone" class="form-label mt-4">Añade tu número de
+                  teléfono</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Ingrese telefono"
+                  required
+                />
+                <label for="userAddress" class="form-label mt-4">
+                  Añade tu direccion</label>
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  class="form-control"
+                  placeholder="Ingrese Dirección"
+                  required
+                />     
+              </div>
+            </div>
+            <button
+              type="submit"
+              id="submitSignupForm"
+              class="btn btn-primary mt-4"
+            >
+              Registrarse
+            </button>
+            <button class="btn btn-dark mt-4">
+              <a href="/login" class="text-decoration-none text-white mt-4">
+                Iniciar sesion
+              </a>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

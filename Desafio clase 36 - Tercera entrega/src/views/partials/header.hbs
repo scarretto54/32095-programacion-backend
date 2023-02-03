@@ -1,0 +1,67 @@
+<header style="height: 15vh;">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container" style="padding:0px">
+      <a class="navbar-brand" href="/productos">
+        <img src="/images/pages/logo.png" width="150"  alt="" />
+      </a>      
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+          <ul class="navbar-nav align-items-center mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/productos/categoria/Vinos"><h4>Vinos</h3></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/productos/categoria/Espumantes"><h4>Espumantes</h4></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/productos/categoria/Cervezas"><h4>Cervezas</h4></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/productos/categoria/Destilados"><h4>Destilados</h4></a>
+            </li>
+          </ul>
+        </div>
+    {{#if userInfo}}
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav align-items-center mr-auto">
+            <li class="nav-item">   
+              <div class="container">          
+              <a class="nav-link" href="/chat"><img src="/images/pages/ChatIcon.png" Style="display: flex;" className="CartWidgetIcon" width="40" height="27" alt="icon" />Chat Room</a>
+            </div> 
+            </li>
+            <li class="nav-item">              
+              <a class="nav-link" href="/carrito"><img src="/images/pages/cartWidget.png" Style="display: flex;" className="CartWidgetIcon" width="30" height="27" alt="icon" /></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/perfil"><img src="/images/pages/iconAcc.png" Style="display: flex;" className="CartWidgetIcon" width="30" height="27" alt="icon" /></a>
+            </li>
+          </ul>
+        </div>
+        <button class="btn btn-secondary align-items-end"><a class="link-light text-decoration-none"  href="/logout">Salir</a></button>       
+    </div>
+    {{else}}
+    <div class="conrainer align-items-center justify-content-end mr-auto">
+            <button class="btn btn-primary mt-4">
+              <a href="/login" class="text-decoration-none text-white mt-4">
+                Iniciar sesion
+              </a>
+            </button>
+            <button class="btn btn-secondary mt-4">
+              <a href="/signup" class="text-decoration-none text-white mt-4">
+              Registrarse
+              </a>
+            </button>
+    </div>    
+    {{/if}}
+  </nav>
+</header>

@@ -1,0 +1,34 @@
+{
+  "name": "coder-backend",
+  "version": "1.0.0",
+  
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "gh-pages": "^3.2.3",
+    "moment": "^2.29.1",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "^17.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

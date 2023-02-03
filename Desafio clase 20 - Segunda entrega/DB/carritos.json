@@ -1,0 +1,27 @@
+[
+  {
+    "productos": [
+      {
+        "id": 2,
+        "timestamp": 1642908763521,
+        "nombre": "El patron Bitcoin",
+        "descripcion": "El patrón Bitcoin analiza el contexto histórico del surgimiento de esta nueva moneda, las propiedades económicas que la han permitido crecer rápidamente y sus implicaciones económicas, políticas y sociales.",
+        "codigo": 2,
+        "foto": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/344/m_libros/portada_el-patron-bitcoin_saifedean-ammous_202111181133.jpg",
+        "precio": "300",
+        "stock": "30"
+      },
+      {
+        "nombre": "El senor de los anillos",
+        "descripcion": "La novela narra el viaje del protagonista principal, Frodo Bolsón, hobbit de la Comarca, para destruir el Anillo Único y la consiguiente guerra que provocará el enemigo para recuperarlo, ya que es la principal fuente de poder de su creador, el Señor oscuro, Sauron.",
+        "codigo": "1",
+        "foto": "https://planetadelibroscom.cdnstatics2.com/usuaris/libros/fotos/210/m_libros/portada_el-senor-de-los-anillos_j-r-r-tolkien_201601252224.jpg",
+        "precio": "120",
+        "stock": 14,
+        "id": 1,
+        "timestamp": 1642908763521
+      }
+    ],
+    "id": 1
+  }
+]

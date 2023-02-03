@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <div class="alert alert-secondary" role="alert">
+            <span>App eCommerce - Santiago Carretto</span>
+        </div>        
+  </header>
+<main> 
+<div>
+    <div class="jumbotron container">       
+        <div class="alert alert-primary" role="alert">
+            Agregar productos al carrito por ID
+            <a href="index.html" class="btn btn-success" value="dashboard">Ir al administrador de productos</a>
+        </div>
+        <br>
+        <div>
+                Carritos de Compra
+                <button id="btnCrearCarrito" class="btn btn-success" value="crear">Crear nuevo carrito</button>
+        </div>
+         <br>
+        <div>
+                <span>Seleccionar Carrito</span>
+                <select id="comboCarritos" name="comboCarritos"></select>
+                <button id="btnEliminarCarrito" class="btn btn-danger" value="eliminar">Eliminar Carrito</button>
+                <br>
+                <span>Seleccionar Producto</span>
+                <select id="comboProductos" name="comboProductos"></select>
+            <button id="btnAgregarAlCarrito" class="btn btn-primary" value="crear">Agregar producto al Carrito</button>
+        </div>        
+        <hr>
+            <!--Listado de productos-->
+        <div id="carrito"></div>
+    </div>
+</div>
+</main>
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+          <span class="text-muted">© 2022 Design and coded by Santaigo Carretto</span>
+    </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/carrito.js"></script>
+
+</body>
+
+</html>

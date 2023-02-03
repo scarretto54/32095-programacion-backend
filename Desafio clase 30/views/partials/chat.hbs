@@ -1,0 +1,67 @@
+    
+<h2 class="text-primary">Chat</h2>
+<hr />
+  <div id="messages"></div>
+  <hr>
+  <h2 class="text-primary">Enviar Mensaje</h2>
+
+<form action="api/chat" method="post" id="myChat">
+  <div class="mb-3">
+<br>
+    <input
+      type="text"
+      class="form-control w-25"
+      id="name"
+      placeholder="Nombre del usuario"
+      required=""
+    />
+
+    <input
+      type="text"
+      class="form-control w-25"
+      id="lastname"
+      placeholder="Apellido del usuario"
+    />
+
+    <input
+      type="email"
+      class="form-control w-25"
+      id="id"
+      placeholder="Email del usuario"
+      required=""
+    />
+
+    <input
+      type="number"
+      class="form-control w-25"
+      id="age"
+      placeholder="Edad del usuario"
+    />
+
+    <input
+      type="text"
+      class="form-control w-25"
+      id="alias"
+      placeholder="Alias del usuario"
+    />
+
+    <input
+      type="text"
+      class="form-control w-25"
+      id="avatar"
+      placeholder="URL del avatar del usuario"
+      required=""
+    />
+
+  </div>
+
+  <input
+    type="text"
+    class="form-control w-25 d-inline"
+    id="text"
+    placeholder="Escriba su mensaje"
+  />
+
+  <input type="submit" class="btn btn-primary" value="Enviar" />
+</form>
+

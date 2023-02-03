@@ -1,0 +1,35 @@
+[
+  {
+    "username": "santi@santi.com",
+    "password": "12345678",
+    "name": "Santiago Carretto",
+    "address": "-",
+    "age": "36",
+    "phone": "+5491135865454",
+    "avatar": "https://norfipc.com/img/facebook/avatars/01.png",
+    "role": "user",
+    "id": 1
+  },
+  {
+    "username": "santiagocarretto@live.com",
+    "password": "12345678",
+    "name": "Santiago Carretto",
+    "address": "-",
+    "age": "37",
+    "phone": "+5491135865454",
+    "avatar": "https://norfipc.com/img/facebook/avatars/01.png",
+    "role": "user",
+    "id": 2
+  },
+  {
+    "username": "santiagocarretto@gmail.com",
+    "password": "12345678",
+    "name": "Santiago Carretto",
+    "address": "-",
+    "age": "37",
+    "phone": "+5491135865454",
+    "avatar": "https://norfipc.com/img/facebook/avatars/01.png",
+    "role": "user",
+    "id": 3
+  }
+]

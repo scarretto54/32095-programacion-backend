@@ -1,0 +1,31 @@
+{
+  "name": "coder-backend",
+  "version": "1.0.0",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "^17.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "contenedor.js",
+  "description": ""
+}

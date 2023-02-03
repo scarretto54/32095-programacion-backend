@@ -1,0 +1,77 @@
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32bd"), 
+    "nombre" : "Padre Rico,  Padre Pobre", 
+    "descripcion" : "El libro está basado en la educación financiera que Kiyosaki recibió de su \"Padre Rico\" en Hawái,  aunque el grado de ficción de estas anécdotas está en discusión. El libro remarca las diferentes actitudes hacia el dinero,  el trabajo y la vida de estos dos y como ellos tuvieron influencia en la vida de ambos.", 
+    "codigo" : "3", 
+    "foto" : "https://imagessl5.casadellibro.com/a/l/t7/25/9788466332125.jpg", 
+    "precio" : 1259.0, 
+    "stock" : 100.0, 
+    "id" : "3", 
+    "timestamp" : 1642909659834.0
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32be"), 
+    "nombre" : "Los Cuatro Acuerdos", 
+    "descripcion" : "El doctor Miguel Ruiz nos propone en este libro un sencillo procedimiento para eliminar todas aquellas creencias heredadas que nos limitan y substituirlas por otras que responden a nuestra realidad interior y nos conducen a la libertad.", 
+    "codigo" : "4", 
+    "foto" : "https://imagessl6.casadellibro.com/a/l/t7/36/9788479532536.jpg", 
+    "precio" : 1750.0, 
+    "stock" : 100.0, 
+    "id" : "4", 
+    "timestamp" : 1642908763521.0
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32bf"), 
+    "nombre" : "Aquelarre (The Coven)", 
+    "descripcion" : "Un desafiante y provocador thriller feminista al estilo El cuento de la criada.  Imagina un mundo en el que la brujería es real. En el que las madres transmiten su poder a sus hijas,  un poder que utilizan de forma pacífica. Ahora imagina que el presidente de los Estados Unidos es un demagogo populista que ha decidido que todas las brujas deben permanecer encerradas,  creando un mundo en el que ser mujer está solo a un paso de ser una criminal…", 
+    "codigo" : "5", 
+    "foto" : "https://planetadelibrosar4.cdnstatics.com/usuaris/libros/fotos/344/m_libros/343670_portada_the-coven__202012021206.jpg", 
+    "precio" : 2760.0, 
+    "stock" : 100.0, 
+    "id" : "5", 
+    "timestamp" : 1642909280193.0
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c1"), 
+    "nombre" : "Star Wars: El renacer de la Resistencia(novela Episodio IX)", 
+    "descripcion" : "La Resistencia está en ruinas. Tras su huida desesperada de Crait,  su antiguo ejército ha quedado reducido a un puñado de héroes heridos. Finn,  Poe,  Rey,  Rose,  Chewbacca,  Leia Organa… sus nombres son célebres en los mundos oprimidos por cuya libertad combaten. Pero los nombres no sirven de mucho y la última llamada de auxilio de Leia no encuentra respuesta. Desde las junglas de Ryloth hasta los astilleros de Corellia,  la sombra de la Primera Orden se extiende y los valientes capaces de enfrentarse a su oscuridad están dispersos y aislados. Si la esperanza debe sobrevivir,  la Resistencia tendrá que viajar por toda la galaxia,  en busca de más líderes… incluidos aquellos que,  en el pasado,  ayudaron a una floreciente rebelión a derrocar al Imperio. Se librarán batallas,  se forjarán alianzas y la Resistencia renacerá.", 
+    "codigo" : "7", 
+    "foto" : "https://planetadelibrosar0.cdnstatics.com/usuaris/libros/fotos/310/m_libros/portada_star-wars-el-renacer-de-la-resistencianovela-episodio-ix_rebecca-roanhorse_202002111913.jpg", 
+    "precio" : 1340.0, 
+    "stock" : 100.0, 
+    "timestamp" : 1642909647306.0, 
+    "id" : "7"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c2"), 
+    "nombre" : "Beren y Lúthien", 
+    "descripcion" : "El elemento central del relato es el destino que ensombrece el amor de Beren y Lúthien,  dado que Beren era un hombre mortal y Lúthien una elfa inmortal,  cuyo padre,  un gran señor elfo,  en clara oposición a Beren,  impuso a éste una tarea imposible que debía llevar a cabo si quería desposar a Lúthien. Éste es el núcleo de la leyenda,  que acaba conduciendo al absolutamente heroico intento de Beren y Lúthien de robarle un Silmaril al más malvado de todos los seres: Melkor,  también llamado Morgoth,  el Enemigo Oscuro.", 
+    "codigo" : "8", 
+    "foto" : "https://planetadelibrosar9.cdnstatics.com/usuaris/libros/fotos/289/m_libros/portada_beren-y-luthien_j-r-r-tolkien_201901241705.jpg", 
+    "precio" : 3000.0, 
+    "stock" : 100.0, 
+    "timestamp" : 1642909812930.0, 
+    "id" : "8"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c4"), 
+    "nombre" : "El silmarillion ilustrado", 
+    "descripcion" : "El Silmarillion cuenta la historia de la Primera Edad,  el antiguo drama del que hablan los personajes de El Señor de los Anillos,  y en cuyos acontecimientos algunos de ellos tomaron parte,  como Elrond y Galadriel.  Los tres Silmarils eran gemas creadas por Fëanor,  el más dotado de los Elfos,  y contenían la Luz de los Dos Árboles de Valinor antes de que los Árboles mismos fueran destruidos por Morgoth,  el primer Señor Oscuro. Desde entonces la inmaculada Luz de Valinor vivió sólo en los Silmarils,  pero Morgoth se apoderó de ellos,  y los engarzó en su corona,  guardada en la fortaleza impenetrable de Angband en el norte de la Tierra Media.", 
+    "codigo" : "10", 
+    "foto" : "https://planetadelibrosar6.cdnstatics.com/usuaris/libros/fotos/126/m_libros/125233_portada_el-silmarillion-ilustrado-por-ted-nasmith_j-r-r-tolkien_201505211338.jpg", 
+    "precio" : 4700.0, 
+    "stock" : 0.0, 
+    "timestamp" : 1642909974137.0, 
+    "id" : "10"
+}
+{ 
+    "_id" : ObjectId("61ecfd626e3da595398c32cf"), 
+    "nombre" : "Diego. Nacido para molestar", 
+    "descripcion" : "Esta biografía ilustrada del mejor futbolista de todos los tiempos es la biografía de Dios, sin duda. Miguel Rep da a luz a su Diego desde las entrañas mismas de un argentino fanático del fútbol, la política, la literatura y el arte: desde ese corazón mixto de artista.", 
+    "codigo" : "11", 
+    "foto" : "https://cdn.shopify.com/s/files/1/0557/0153/6957/products/Diego-nacido-para-molestar_fte_1080x.jpg", 
+    "precio" : 1200.0, 
+    "stock" : 100.0, 
+    "id" : "11", 
+    "timestamp" : 1642908123651.0
+}

@@ -1,0 +1,70 @@
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c5"), 
+    "usuario" : "santiago", 
+    "receptor" : "1", 
+    "timestamp" : 1642908534987.0, 
+    "text" : "Hola, entregan en cordoba?"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c6"), 
+    "usuario" : "carmen", 
+    "receptor" : "2", 
+    "timestamp" : 1642908763521.0, 
+    "text" : "Buenas tardes, cuando sale la siguiente edicion?"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c7"), 
+    "usuario" : "claudia", 
+    "receptor" : "3", 
+    "timestamp" : 1642908654123.0, 
+    "text" : "Excelente Libro!"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c8"), 
+    "usuario" : "miguel", 
+    "receptor" : "4", 
+    "timestamp" : 1642908789453.0, 
+    "text" : "Buenas, entregan en Entre Rios?"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32c9"), 
+    "usuario" : "martina", 
+    "receptor" : "5", 
+    "timestamp" : 1642908654798.0, 
+    "text" : "No me gusto mucho"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32ca"), 
+    "usuario" : "facundo", 
+    "receptor" : "6", 
+    "timestamp" : 1642908763458.0, 
+    "text" : "Nos entregaron en tiempo y forma. Gracias."
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32cb"), 
+    "usuario" : "dirma", 
+    "receptor" : "7", 
+    "timestamp" : 1642908763987.0, 
+    "text" : "tienen libros de las demas peliculas?"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32cc"), 
+    "usuario" : "carlos", 
+    "receptor" : "8", 
+    "timestamp" : 1642908654521.0, 
+    "text" : "El envio es gratis?"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32cd"), 
+    "usuario" : "margarita", 
+    "receptor" : "9", 
+    "timestamp" : 1642908651521.0, 
+    "text" : "Nunca me llego el pedido"
+}
+{ 
+    "_id" : ObjectId("61ecfd616e3da595398c32ce"), 
+    "usuario" : "antonio", 
+    "receptor" : "10", 
+    "timestamp" : 1642908651521.0, 
+    "text" : "Me parece que el precio es muy alto"
+}

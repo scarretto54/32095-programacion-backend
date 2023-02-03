@@ -1,0 +1,49 @@
+{
+  "name": "coder-backend",
+  "version": "1.0.0",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "fs": "^0.0.1-security",
+    "gh-pages": "^3.2.3",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.1",
+    "pug": "^3.0.2",
+    "socket.io": "^4.4.0",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "^17.1.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "app_hbs.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scarretto54/BackEndDesafioClase12.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scarretto54/BackEndDesafioClase12/issues"
+  },
+  "homepage": "https://github.com/scarretto54/BackEndDesafioClase12#readme",
+  "description": ""
+}
