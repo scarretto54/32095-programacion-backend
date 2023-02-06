@@ -9,3 +9,4 @@
 {"level":"error","message":"Error al enviar mail: Error: The From phone number +14155238886 is not a valid, SMS-capable inbound phone number or short code for your account.","timestamp":"2023-02-02 21:32:40"}
 {"level":"error","message":"Error al enviar mail: Error: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.","timestamp":"2023-02-02 21:47:38"}
 {"level":"error","message":"Error al enviar mail: Error: Authenticate","timestamp":"2023-02-04 14:20:18"}
+{"level":"error","message":"Error al enviar mail: Error: Invalid login: 535 Authentication failed","timestamp":"2023-02-06 15:57:37"}

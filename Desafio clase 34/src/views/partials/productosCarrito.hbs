@@ -1,0 +1,68 @@
+<div class="row pt-2">
+  <div class="card glass">
+    <div id="cartContainer" class="card-body">
+      <h1>Carrito</h1>
+      <hr>
+      <div class="d-flex flex-row justify-content-between">
+        <button type="button" id="removeAll" class="btn btn-secondary">
+          Remover todos los productos
+        </button>
+        <button type="button" id="checkOut" class="btn bolder btn-primary">
+                Enviar Pedido 
+        </button>
+      </div>
+      <hr />
+      <div id="productList" class="row row-cols-1">
+        <div class="col mb-2">
+          <div class="card h-100 glass p-1 bg-success">
+            <h2 class="text-white text-center">Total Orden: $<span id="totalOrder">{{total}}</span></h2>
+          </div>
+        </div>
+      </div>
+      <div id="productList" class="container row row-cols-1 ">
+        {{#each listaDeProductosEnCarro}}
+          <div class="col mb-2">
+            <div class=" card h-100 glass">
+              <div class="row g-0">
+                <div class="col-md-2">
+                  <img
+                    src="{{this.imageURL}}"
+                    height="150px"                    
+                    class="card-img-top"
+                    alt="{{this.description}}"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <p class="mb-0">
+                      <span class="badge bg-secondary">{{this.category}} </span>
+                    </p>
+                    <h5 class="card-title mt-1">{{this.name}}</h5>
+                    <div class="row justify-content-start">
+                      <div class="">
+                        <span class="mb-0 text-center">
+                          Precio
+                        </span>
+                        <span class="mb-2 text-start"><strong>${{this.price}}</strong> </span>
+                      </div>
+                      <div class="col">
+                        <span class="mb-0">
+                          Stock
+                        </span>
+                        <span class="mb-2"><strong>{{this.qty}} U</strong> </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{else}}
+          <div class="container text-center">
+            <h2>No se encontraron productos</h2>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

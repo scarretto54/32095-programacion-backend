@@ -1,0 +1,79 @@
+/* body {
+  color: #ede4e4;
+  height: 100vh;
+}
+footer {
+  color:#383737
+} */
+/* 
+section {
+  background: no-repeat center url("/images/outside.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+section.insideProduct {
+  background: no-repeat center url("/images/inside.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+h1{
+  color:white;
+}
+
+.link-dark{
+  text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color:white;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+
+
+.card-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;-webkit-line-clamp: 1;
+           line-clamp: 1; 
+          -webkit-box-orient: vertical;
+}
+
+.card-img-top{
+  height:200px;
+  width: auto;
+}
+
+.card-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;-webkit-line-clamp: 3;
+           line-clamp: 1; 
+          -webkit-box-orient: vertical;
+}
+
+.link-light{
+  text-decoration: none;
+}
+
+
+.glass {
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background-color: rgb(249 250 251 / 50%);
+  backdrop-filter: blur(5px);
+}
+
+.passwordMatches {
+  border-color: #86fea0;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(17 253 13 / 25%);
+}
+
+.passwordNotEqual {
+  border-color: #fe8686;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(253 13 13 / 17%);
+} */
