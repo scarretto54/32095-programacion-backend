@@ -101,7 +101,7 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
     logger.info("Alerta de sms por nueva orden enviada");
 
   } catch (error) {
-    logger.error(`Error al enviar mail: ${error}`);
+    logger.error(`Error al enviar la notificacion: ${error}`);
   }
 };
 

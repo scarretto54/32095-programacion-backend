@@ -1,8 +1,8 @@
 <div id="productList" class="row row-cols-1">
         {{#if listaDeProductos}}
-          <div class="col">
-            <div class="card h-100 glass">
-              <div class="row g-0">
+          <div class="col ">
+            <div class="card h-100 glass" >
+              <div class="row justify-content-between g-0 ">
                 <div class="col-md-3">
                   <img
                     src="{{listaDeProductos.imageURL}}"
@@ -30,10 +30,29 @@
                         </p>
                         <span class="mb-2"><strong>{{listaDeProductos.stock}} U</strong> </span>
                       </div>
-                      <div class="col">                      
+                      <div class="col">  
+
+       <div >          
+           <table >
+               <tbody>
+                   <tr className="btn-group" Role="group">
+                       <td align="left"><button className="btn btn-outline-secondary" onClick=''><strong>-</strong></button></td>
+                       <td align="center"><button className="btn btn-outline" Style='' ><strong>1</strong></button></td>
+                       <td align="right"><button className="btn btn-outline-secondary" onClick=''><strong>+</strong></button></td>
+                       
+                   </tr> 
+                   <br/>
+                   <br/>                  
+                   <tr>                   
+                       <td align="right" colSpan="5">
+                        <br/>
                         <button class="btn btn-primary" productId="{{listaDeProductos._id}}">
                             Agregar al carrito
-                        </button>                      
+                        </button> </button></td>
+                   </tr>
+               </tbody>
+           </table>       
+       </div>
                       </div>
                     </div>
                   </div>
@@ -44,5 +63,5 @@
         {{else}}
           <div class="container text-center glass">
             <h2>No se encontró ese producto</h2>
-          </div>
+          </div>          
         {{/if}}
