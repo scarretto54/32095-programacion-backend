@@ -3,9 +3,14 @@ export const handleCart = (urlPath) => {
     // Add to cart event handler------------------------------------------//
     const productListContainer = document.getElementById("productList");
 
+
+
+
+
+
     const addToCart = async (event) => {
       let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
-
+      console.log(carritoStorage)
       if (event.target.innerText === "Agregar al carrito") {
         const data = {
           _id: event.target.attributes.productid.value,
