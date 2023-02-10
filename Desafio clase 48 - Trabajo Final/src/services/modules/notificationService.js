@@ -39,13 +39,14 @@ const sendMailSignup = async (user) => {
   logger.info("Alerta de mail por nuevo usuario enviada");
 };
 
-const sendNotificationOrder = async (first_name, email, total, products) => {
+const sendNotificationOrder = async (first_name, email, total, products, orderNumber ) => {
   try {
     await transporterEthereal.sendMail({
       from: "QuieroVino",
       to: email,
-      subject: `QuieroVino: Nuevo pedido de ${first_name} (${email})`,
-      html: `<h3>Detalle de compra en Quiero Vino: </h3>
+      subject: `QuieroVino: Nuevo pedido N° ${orderNumber} de ${first_name} (${email})`,
+      html: `<h3>Detalle de compra en Quiero Vino:  </h3>
+                <p>Numero de Orden: ${orderNumber}</p>
                 <p>Valor total: $${total}</p>
                 <ul>Productos: 
                     ${products.map((product) => {
@@ -59,8 +60,9 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
     // await transporterGmail.sendMail({
     //   from: "QuieroVino",
     //   to: email,
-    //   subject: `QuieroVino: Nuevo pedido de ${first_name} (${email})`,
+    //   subject: `QuieroVino: Nuevo pedido N° ${orderNumber} de ${first_name} (${email})`,
     //   html: `<h3>Detalle de compra en Quiero Vino: </h3>
+    //             <p>Numero de Orden: ${orderNumber}</p>
     //             <p>Valor total: $${total}</p>
     //             <ul>Productos: 
     //                 ${products.map((product) => {
@@ -75,7 +77,7 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
 
     await twilioClient.messages.create({
       body: `
-      QuieroVino: Nuevo pedido de ${first_name} (${email})
+      QuieroVino: Nuevo pedido N° ${orderNumber} de ${first_name} (${email})
       Detalle de compra: 
       Valor total: $${total}
       Lista de productos: 
@@ -94,7 +96,7 @@ const sendNotificationOrder = async (first_name, email, total, products) => {
       body: `
       QuieroVino:
       Tu pedido fue recibido y se encuentra en proceso.
-      Te enviamos el comprobante del la orden por correo. 
+      Te enviamos el comprobante del la orden N° ${orderNumber} por correo. 
       `,
       from: TWILIO_NUM_SMS_FROM,
       to: "+54"+TWILIO_NUM_TO,
@@ -117,9 +119,9 @@ module.exports = notificationService = () => ({
 
   async alertNewOrder(order) {
     const { first_name, email, phone } = order.user;
-    const { total, products } = order;
+    const { total, products,orderNumber} = order;
     try {
-      await sendNotificationOrder(first_name, email, total, products);
+      await sendNotificationOrder(first_name, email, total, products, orderNumber);
     } catch (error) {
       logger.error(error);
     }

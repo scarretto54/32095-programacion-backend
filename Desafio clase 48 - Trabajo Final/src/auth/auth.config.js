@@ -1,4 +1,4 @@
-const PersistenceFactory = require("../dal/indexFactory");
+const PersistenceFactory = require("../models/indexFactory");
 const { MEM_TYPE } = require("../config/globals");
 
 const { usersDao } = PersistenceFactory.get(MEM_TYPE);

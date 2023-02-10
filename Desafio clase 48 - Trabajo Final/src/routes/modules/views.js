@@ -46,14 +46,16 @@ module.exports = (viewController) => {
       PORT,
       NODE_ENV,
       MONGO_URI,
-      USERNAME_GMAIL,
+      MAIL_GMAIL,
+      NODEMAILER_EMAIL,
       SESSION_EXP_TIME,
     } = require("../../config/globals");
     const envInfo = {
       PORT,
       NODE_ENV,
       MONGO_URI,
-      USERNAME_GMAIL,
+      MAIL_GMAIL,
+      NODEMAILER_EMAIL,
       SESSION_EXP_TIME,
     };
     res.render("pages/entorno", { envInfo, userInfo });

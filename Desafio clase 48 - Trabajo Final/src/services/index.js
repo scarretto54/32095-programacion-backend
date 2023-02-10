@@ -3,7 +3,7 @@ const chatService = require("./modules/chatService");
 const productsService = require("./modules/productsService");
 const notificationService = require("./modules/notificationService");
 const ordersService = require("./modules/ordersService");
-const PersistenceFactory = require("../dal/indexFactory");
+const PersistenceFactory = require("../models/indexFactory");
 const { MEM_TYPE } = require("../config/globals");
 
 const { productDao, cartDao, chatDao, ordersDao } =

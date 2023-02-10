@@ -11,3 +11,8 @@
 {"level":"error","message":"Error al enviar mail: Error: Authenticate","timestamp":"2023-02-04 14:20:18"}
 {"level":"error","message":"Error al enviar mail: Error: Invalid login: 535 Authentication failed","timestamp":"2023-02-06 22:31:03"}
 {"level":"error","message":"Error al enviar la notificacion: Error: Invalid login: 535 Authentication failed","timestamp":"2023-02-06 22:35:41"}
+{"level":"error","message":"Error al enviar la notificacion: Error: Authenticate","timestamp":"2023-02-09 21:34:13"}
+{"level":"error","message":"Error al enviar la notificacion: Error: Authenticate","timestamp":"2023-02-09 21:36:53"}
+{"level":"error","message":"Error al enviar la notificacion: Error: Authenticate","timestamp":"2023-02-10 19:11:58"}
+{"level":"error","message":"Error al enviar la notificacion: Error: Authenticate","timestamp":"2023-02-10 19:12:46"}
+{"level":"error","message":"Error al enviar la notificacion: Error: Authenticate","timestamp":"2023-02-10 19:12:50"}

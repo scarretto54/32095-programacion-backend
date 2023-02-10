@@ -4,7 +4,7 @@ module.exports = authController = (notificationService) => ({
   logIn(req, res, next) {
     if (req.isAuthenticated()) {
       logger.info("Usuario logueado");
-      // const loggedUsername = req.session.user;      
+              
       return res.redirect("/productos");
     } else {
       logger.info("Usuario no logueado");

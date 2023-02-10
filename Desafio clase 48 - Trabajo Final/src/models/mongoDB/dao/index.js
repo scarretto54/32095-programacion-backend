@@ -9,7 +9,7 @@ let {
   messagesModel,
   usersModel,
   ordersModel,
-} = require("../models/index");
+} = require("../schema/index");
 
 module.exports = {
   productDao: new productDao(productsModel),
