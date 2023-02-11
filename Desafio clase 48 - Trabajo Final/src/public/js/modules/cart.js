@@ -59,6 +59,7 @@ export const handleCart = (urlPath) => {
     const eventHandler = async (event) => {
       if (event.target.id === "removeAll") {
         console.log("DELETE");
+        console.log(localStorage.getItem("carrito"))
         await fetch("/api/carrito", {
           method: "DELETE",
         }).then((res) => (window.location.href = "/carrito"));
@@ -98,16 +99,6 @@ export const handleCart = (urlPath) => {
         });
         
       }
-
-      deleteProd: (idCarrito, idProducto) => {
-        const options = {
-            method: 'DELETE',
-        }
-        return fetch(`/api/carritos/${idCarrito}/productos/${idProducto}`, options)
-    }
-
-
-
     };
 
     cartContainer.addEventListener("click", eventHandler);

@@ -30,33 +30,42 @@
               <a class="nav-link" href="/productos/categoria/Destilados"><h4>Destilados</h4></a>
             </li>
           </ul>
-        </div>
+        </div> 
+    {{#if userInfo.isAdmin }} 
+    <div class=" align-items-center justify-content-end mr-auto">
+            <button class="btn btn-primary mt-8">
+              <a href="/agregar-productos" class="text-decoration-none text-white mt-4">
+                Panel de administracion
+              </a>
+            </button>
+    </div>        
+    {{/if}} 
     {{#if userInfo}}
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav align-items-center mr-auto">
             <li class="nav-item">   
               <div class="container">          
-              <a class="nav-link" href="/chat"><img src="/images/pages/ChatIcon.png" Style="display: flex;" className="CartWidgetIcon" width="40" height="27" alt="icon" />Chat Room</a>
+              <a class="nav-link" href="/chat"><img src="/images/pages/ChatIcon.png" Style="display: flex;" class="CartWidgetIcon" width="40" height="27" alt="icon" />Chat Room</a>
             </div> 
             </li>
             <li class="nav-item">              
-              <a class="nav-link" href="/carrito"><img src="/images/pages/cartWidget.png" Style="display: flex;" className="CartWidgetIcon" width="30" height="27" alt="icon" /></a>
+              <a class="nav-link" href="/carrito"><img src="/images/pages/cartWidget.png" Style="display: flex;" class="CartWidgetIcon" width="30" height="27" alt="icon" /></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/perfil"><img src="/images/pages/iconAcc.png" Style="display: flex;" className="CartWidgetIcon" width="30" height="27" alt="icon" /></a>
+              <a class="nav-link" href="/perfil"><img src="/images/pages/iconAcc.png" Style="display: flex;" class="CartWidgetIcon" width="30" height="27" alt="icon" /></a>
             </li>
           </ul>
         </div>
         <button class="btn btn-secondary align-items-end"><a class="link-light text-decoration-none"  href="/logout">Salir</a></button>       
     </div>
     {{else}}
-    <div class="conrainer align-items-center justify-content-end mr-auto">
-            <button class="btn btn-primary mt-4">
+    <div class="align-items-center justify-content-end mr-auto">
+            <button class="btn btn-primary mt-8">
               <a href="/login" class="text-decoration-none text-white mt-4">
                 Iniciar sesion
               </a>
             </button>
-            <button class="btn btn-secondary mt-4">
+            <button class="btn btn-secondary mt-8">
               <a href="/signup" class="text-decoration-none text-white mt-4">
               Registrarse
               </a>

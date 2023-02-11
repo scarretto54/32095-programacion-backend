@@ -3,8 +3,7 @@ const logger = require("../../utils/logger");
 module.exports = authController = (notificationService) => ({
   logIn(req, res, next) {
     if (req.isAuthenticated()) {
-      logger.info("Usuario logueado");
-              
+      logger.info("Usuario logueado");              
       return res.redirect("/productos");
     } else {
       logger.info("Usuario no logueado");

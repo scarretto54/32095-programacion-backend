@@ -1,6 +1,15 @@
 
 <section class="insideProduct">
+  {{#if userInfo.isAdmin }} 
+            <button class="btn btn-secondary mt-4">
+              <a href="/agregar-productos" class="text-decoration-none text-white mt-4">
+                Volver panel de administracion
+              </a>
+            </button>
     <div class="container pt-4">
         {{>entornoVariables}}
     </div>
+  {{else}}
+    <h1>Usted no es Admin</h1>
+  {{/if}}  
 </section>

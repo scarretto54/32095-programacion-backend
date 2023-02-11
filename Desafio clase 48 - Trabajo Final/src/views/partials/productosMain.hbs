@@ -6,8 +6,7 @@
                     {{>sidebarProductos}}
                 </div>
                 <div id="listaDeProductos" class="col">
-                {{#if userInfo}}
-                <span><a class="nav-link text-success" href="/agregar-productos">Administrar Productos</a></span>
+                {{#if userInfo}}                
                     {{>productosListado}}
                 {{else}}
                     {{>productosListadoNoUser}}
