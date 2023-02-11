@@ -14,8 +14,7 @@ module.exports = (usersDao) => {
       const user = await usersDao.findUserByEmail(email);
       if (!user) {
         return done(null, false);
-      }
-
+      }      
       const isValid = await validPassword(password, user.password);
 
       if (isValid) {
@@ -36,7 +35,7 @@ module.exports = (usersDao) => {
         return done(
           null,
           false,
-          logger.info("mensaje:", "Hay un usuario registrado con su mail")
+          logger.info("mensaje: Hay un usuario registrado con su mail")
         );
       } else {
         const { firstName, lastName, email, age, phone, address } = req.body;   

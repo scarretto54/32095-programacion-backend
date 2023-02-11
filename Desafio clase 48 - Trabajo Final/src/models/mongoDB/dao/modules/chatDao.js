@@ -1,4 +1,5 @@
 const logger = require("../../../../utils/logger");
+const { chatDto } = require("../../dto/index");
 module.exports = class {
   constructor(model) {
     this.model = model;
@@ -6,7 +7,7 @@ module.exports = class {
   async getAllMessages() {
     try {
       const messages = await this.model.find({}).lean();
-      return messages;
+      return messages.map(messages => new chatDto(messages));
     } catch (error) {
       logger.error(error);
     }
@@ -15,7 +16,7 @@ module.exports = class {
   async saveMessage(message) {
     try {
       const newMessage = await this.model.create(message);
-      return newMessage;
+      return new chatDto(newMessage);
     } catch (error) {
       logger.error(error);
     }
@@ -24,7 +25,7 @@ module.exports = class {
   async getAllMessagesByEmail(email) {
     try {
       const messages = await this.model.find({ "author.email": email }).lean();
-      return messages;
+      return messages.map(messages => new chatDto(messages));
     } catch (error) {
       logger.error(error);
     }

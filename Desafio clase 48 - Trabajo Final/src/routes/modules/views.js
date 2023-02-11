@@ -41,7 +41,7 @@ module.exports = (viewController) => {
   // --------------- Other views------------------------------/
 
   router.get("/entorno", isAuthenticated, (req, res) => {
-    const userInfo = req.user.toJSON();
+    const userInfo = req.user;
     const {
       PORT,
       NODE_ENV,
@@ -62,12 +62,12 @@ module.exports = (viewController) => {
   });
 
   router.get("/agregar-productos", isAuthenticated, (req, res) => {
-    const userInfo = req.user.toJSON();
+    const userInfo = req.user;
     res.render("pages/adminPanel", { userInfo });
   });
 
   router.get("/perfil", isAuthenticated, (req, res) => {
-    const userInfo = req.user.toJSON();
+    const userInfo = req.user;
     res.render("pages/perfil", { userInfo });
   });
 

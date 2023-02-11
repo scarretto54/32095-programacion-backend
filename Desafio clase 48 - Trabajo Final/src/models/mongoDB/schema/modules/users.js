@@ -7,11 +7,12 @@ const userSchema = new Schema({
   },
   first_name: String,
   last_name: String,  
-  age: Number,
+  age: Number,  
   phone: String,
   address: String,
   password: String,
   avatarUrl: String,
+  isAdmin: { type: Boolean, default: false },
 });
 
 module.exports = model("User", userSchema);

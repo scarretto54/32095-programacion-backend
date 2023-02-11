@@ -1,4 +1,4 @@
-exports.cartDTO = (cart) => {
+exports.itemQty = (cart) => {
   if (cart) {
     let productsOnCart = cart.products;
 

@@ -17,7 +17,7 @@ module.exports = class {
       res.render("pages/productos", { listaDeProductos, userInfo: false });
       return;
       }
-      const  userInfo = req.user.toJSON()
+      const  userInfo = req.user
       
       let listaDeProductos = await this.productsService.getAllProducts();
 
@@ -45,7 +45,7 @@ module.exports = class {
         });
         return;
       }
-      const userInfo = req.user.toJSON()
+      const userInfo = req.user
       let listaDeProductos = await this.productsService.getProduct(
         req.params.id
       );
@@ -71,7 +71,7 @@ module.exports = class {
         });
         return;
       }
-      const userInfo = req.user.toJSON()
+      const userInfo = req.user
       let listaDeProductos = await this.productsService.getProductByCategory(
         req.params.categoria
       );
@@ -89,7 +89,7 @@ module.exports = class {
   // ------------------- Cart Controllers -------------/
   async getCartByUserId(req, res, next) {
     try {
-      const userInfo = req.user.toJSON();
+      const userInfo = req.user;
       let listaDeProductosEnCarro = await this.cartService.getAllCartItems(
         req.user._id
       );
@@ -118,7 +118,7 @@ module.exports = class {
   // --------------- Chat Controllers----------------/
   async getAllMessages(req, res, next) {
     try {
-      const userInfo = req.user.toJSON();
+      const userInfo = req.user;
       const allMessages = await this.chatService.getAllMessages();
 
       res.render("pages/chatPage", { allMessages, userInfo });
@@ -130,7 +130,7 @@ module.exports = class {
 
   async getAllMessagesByEmail(req, res, next) {
     try {
-      const userInfo = req.user.toJSON();
+      const userInfo = req.user;
       const allMessages = await this.chatService.getAllMessagesByEmail(
         req.params.email
       );

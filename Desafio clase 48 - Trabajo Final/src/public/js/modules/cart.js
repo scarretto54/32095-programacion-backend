@@ -98,6 +98,16 @@ export const handleCart = (urlPath) => {
         });
         
       }
+
+      deleteProd: (idCarrito, idProducto) => {
+        const options = {
+            method: 'DELETE',
+        }
+        return fetch(`/api/carritos/${idCarrito}/productos/${idProducto}`, options)
+    }
+
+
+
     };
 
     cartContainer.addEventListener("click", eventHandler);

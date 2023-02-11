@@ -1,4 +1,6 @@
 const logger = require("../../../../utils/logger");
+const { usersDto } = require("../../dto/index");
+const { usersAuthDto } = require("../../dto/index");
 module.exports = class {
   constructor(model) {
     this.model = model;
@@ -7,7 +9,7 @@ module.exports = class {
   async findUserByID(id) {
     try {
       const user = await this.model.findById(id);
-      return user;
+      return new usersDto(user);
     } catch (error) {
       logger.error(error);
     }
@@ -16,7 +18,7 @@ module.exports = class {
   async findUserByEmail(email) {
     try {
       const user = await this.model.findOne({ email: email }).lean();
-      return user;
+      return new usersAuthDto(user);
     } catch (error) {
       logger.error(error);
     }
@@ -25,7 +27,7 @@ module.exports = class {
   async addUser(userInfo) {
     try {
       const newCreatedUser = await this.model.create(userInfo);
-      return newCreatedUser;
+      return new usersDto(newCreatedUser);
     } catch (error) {
       logger.error(error);
     }

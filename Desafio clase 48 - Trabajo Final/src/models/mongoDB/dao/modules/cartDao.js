@@ -1,5 +1,6 @@
 const logger = require("../../../../utils/logger");
-const { cartDTO } = require("../../dto/cart.dto");
+const itemQty = require("../../../../utils/itemQty");
+const { cartDto } = require("../../dto/index");
 module.exports = class {
   constructor(model) {
     this.model = model;
@@ -11,7 +12,7 @@ module.exports = class {
         .populate(["products"])
         .lean();
 
-      return cartDTO(allItems);
+      return itemQty.itemQty(allItems);
     } catch (error) {
       logger.error(error);
     }
@@ -21,7 +22,7 @@ module.exports = class {
     try {
       const newCart = await this.model.create(cart);
       await newCart.populate(["products"]);
-      return newCart;
+      return new cartDto(newCart);
     } catch (error) {
       logger.error(error);
     }
@@ -39,7 +40,7 @@ module.exports = class {
         )
         .populate(["products"]);
 
-      return cartUpdated;
+      return new cartDto(cartUpdated);
     } catch (error) {
       logger.error(error);
     }

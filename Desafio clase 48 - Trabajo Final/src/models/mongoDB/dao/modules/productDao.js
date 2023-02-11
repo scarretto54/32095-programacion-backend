@@ -1,4 +1,6 @@
 const logger = require("../../../../utils/logger");
+const { productDto } = require("../../dto/index");
+
 module.exports = class {
   constructor(model) {
     this.model = model;
@@ -6,7 +8,7 @@ module.exports = class {
   async getProduct(id) {
     try {
       const Product = await this.model.findById(id).lean();
-      return Product;
+      return new productDto(Product);
     } catch (error) {
       logger.error(error);
     }
@@ -15,7 +17,7 @@ module.exports = class {
   async getProductByCategory(category) {
     try {
       const Product = await this.model.find({ category: category }).lean();
-      return Product;
+      return Product.map(Product => new productDto(Product));
     } catch (error) {
       logger.error(error);
     }
@@ -24,7 +26,7 @@ module.exports = class {
   async getAllProducts() {
     try {
       const allProducts = await this.model.find().lean();
-      return allProducts;
+      return allProducts.map(allProducts => new productDto(allProducts));
     } catch (error) {
       logger.error(error);
     }
@@ -32,7 +34,7 @@ module.exports = class {
   async addProduct(producto) {
     try {
       const product = await this.model.create(producto);
-      return product;
+      return new productDto(product);
     } catch (error) {
       logger.error(error);
     }
@@ -44,7 +46,7 @@ module.exports = class {
         productUpdated,
         { new: true }
       );
-      return productToUpdate;
+      return new productDto(productToUpdate);
     } catch (error) {
       logger.error(error);
     }
