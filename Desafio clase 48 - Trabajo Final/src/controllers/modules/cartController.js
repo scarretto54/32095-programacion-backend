@@ -31,7 +31,7 @@ module.exports = class {
   async updateorCreateShoppingCartByUserId(req, res, next) {
     try {
       const { _id } = req.user;
-      const products = req.body;
+      const products = req.body;      
       const shoppingCartUpdated = await this.cartService.updateCart(
         _id,
         products

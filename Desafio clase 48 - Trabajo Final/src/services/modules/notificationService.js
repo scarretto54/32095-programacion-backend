@@ -75,33 +75,33 @@ const sendNotificationOrder = async (first_name, email, total, products, orderNu
 
     logger.info("Alerta de mail por nueva orden enviada");
 
-    await twilioClient.messages.create({
-      body: `
-      QuieroVino: Nuevo pedido N° ${orderNumber} de ${first_name} (${email})
-      Detalle de compra: 
-      Valor total: $${total}
-      Lista de productos: 
-      ${products.map((product) => {
-        return `Nombre: ${product.name}
-      Precio: ${product.price} Cantidad: ${product.qty}
-      `
-      })}
-      `,
-      from: "whatsapp:"+TWILIO_NUM_WP_FROM,
-      to: "whatsapp:+549"+TWILIO_NUM_TO,
-    });
-    logger.info("Alerta de whatsapp por nueva orden enviada");
+    // await twilioClient.messages.create({
+    //   body: `
+    //   QuieroVino: Nuevo pedido N° ${orderNumber} de ${first_name} (${email})
+    //   Detalle de compra: 
+    //   Valor total: $${total}
+    //   Lista de productos: 
+    //   ${products.map((product) => {
+    //     return `Nombre: ${product.name}
+    //   Precio: ${product.price} Cantidad: ${product.qty}
+    //   `
+    //   })}
+    //   `,
+    //   from: "whatsapp:"+TWILIO_NUM_WP_FROM,
+    //   to: "whatsapp:+549"+TWILIO_NUM_TO,
+    // });
+    // logger.info("Alerta de whatsapp por nueva orden enviada");
 
-    await twilioClient.messages.create({
-      body: `
-      QuieroVino:
-      Tu pedido fue recibido y se encuentra en proceso.
-      Te enviamos el comprobante del la orden N° ${orderNumber} por correo. 
-      `,
-      from: TWILIO_NUM_SMS_FROM,
-      to: "+54"+TWILIO_NUM_TO,
-    });
-    logger.info("Alerta de sms por nueva orden enviada");
+    // await twilioClient.messages.create({
+    //   body: `
+    //   QuieroVino:
+    //   Tu pedido fue recibido y se encuentra en proceso.
+    //   Te enviamos el comprobante del la orden N° ${orderNumber} por correo. 
+    //   `,
+    //   from: TWILIO_NUM_SMS_FROM,
+    //   to: "+54"+TWILIO_NUM_TO,
+    // });
+    // logger.info("Alerta de sms por nueva orden enviada");
 
   } catch (error) {
     logger.error(`Error al enviar la notificacion: ${error}`);

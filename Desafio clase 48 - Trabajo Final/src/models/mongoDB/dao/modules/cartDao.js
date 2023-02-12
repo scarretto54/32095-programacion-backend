@@ -30,6 +30,7 @@ module.exports = class {
 
   async updateCart(id, newProduct) {
     try {
+      console.log(newProduct)
       const cartUpdated = await this.model
         .findOneAndUpdate(
           { user: id },

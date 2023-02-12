@@ -3,17 +3,33 @@ export const handleCart = (urlPath) => {
     // Add to cart event handler------------------------------------------//
     const productListContainer = document.getElementById("productList");
 
+    let quantityItem = Number(document.getElementById("quantityItem").getAttribute('value'))
+   
+    const onAddQty = (event) => {      
+      if (event.target.innerText === "+") {
+       if(quantityItem < Number(document.getElementById("stock").getAttribute('value'))) {
+        quantityItem = quantityItem + 1 
+        return document.getElementById("quantityItem").setAttribute('value', quantityItem )        
+      }
+    }
+  } 
 
-
-
+  const onRemoveQty = (event) => {      
+    if (event.target.innerText === "-") {
+     if(quantityItem > 1) {
+      quantityItem = quantityItem - 1 
+      return document.getElementById("quantityItem").setAttribute('value', quantityItem )        
+    }
+  }
+} 
 
 
     const addToCart = async (event) => {
       let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
-      console.log(carritoStorage)
+      
       if (event.target.innerText === "Agregar al carrito") {
         const data = {
-          _id: event.target.attributes.productid.value,
+          _id: event.target.attributes.productid.value, qty: document.getElementById("quantityItem").getAttribute('value'),
         };
         if (carritoStorage === null || carritoStorage.length === 0) {
           console.log("POST");
@@ -50,6 +66,8 @@ export const handleCart = (urlPath) => {
     };
 
     productListContainer.addEventListener("click", addToCart);
+    productListContainer.addEventListener("click", onAddQty);
+    productListContainer.addEventListener("click", onRemoveQty);
   }
   // Cart methods
 

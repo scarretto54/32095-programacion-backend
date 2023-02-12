@@ -49,10 +49,10 @@ module.exports = class {
       let listaDeProductos = await this.productsService.getProduct(
         req.params.id
       );
-
+      
       res.render("pages/productoDetails", {
         listaDeProductos: listaDeProductos,
-        userInfo,
+        userInfo, 
       });
       return;
     } catch (error) {}

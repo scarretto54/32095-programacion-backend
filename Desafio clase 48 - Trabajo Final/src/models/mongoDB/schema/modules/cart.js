@@ -12,10 +12,11 @@ const CartSchema = new Schema(
       ref: "User",
     },
     products: [
-      {
-        type: ObjectId,
-        ref: "Product",
-      },
+      // {
+      //   type: ObjectId,
+      //   ref: "Product",
+
+      // },
     ],
   },
   { timestamps: true, collection: "carrito" }

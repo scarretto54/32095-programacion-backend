@@ -28,7 +28,7 @@
                         <p class="mb-0">
                           Stock
                         </p>
-                        <span class="mb-2"><strong>{{listaDeProductos.stock}} U</strong> </span>
+                        <span class="mb-2" ><strong id="stock" value="{{listaDeProductos.stock}}">{{listaDeProductos.stock}}</strong> </span>
                       </div>
                       <div class="col">  
 
@@ -36,9 +36,9 @@
            <table >
                <tbody>
                    <tr class="btn-group" Role="group">
-                      <td align="left"><button class="btn btn-outline-secondary" style="width: 2vw;" onClick=''><strong>-</strong></button></td>
-                      <td align="center"><button class="btn btn-outline" Style='' ><strong>1</strong></button></td>
-                      <td align="right"><button class="btn btn-outline-secondary" style="width: 2vw;" onClick=''><strong>+</strong></button></td>                       
+                      <td align="left"><button class="btn btn-outline-secondary" id="addQty" style="width: 2vw;"><strong>-</strong></button></td>
+                      <td align="center"><input class="btn btn-outline" style='width:5rem' id="quantityItem" value='1'/></td>
+                      <td align="right"><button class="btn btn-outline-secondary" id="removeQty" style="width: 2vw;"><strong>+</strong></button></td>                       
                    </tr> 
                    <br/>
                    <br/>                  
@@ -47,7 +47,7 @@
                       <br/>
                       <button class="btn btn-primary" productId="{{listaDeProductos._id}}">
                       Agregar al carrito
-                      </button> </button>
+                      </button>
                       </td>
                    </tr>
                </tbody>
