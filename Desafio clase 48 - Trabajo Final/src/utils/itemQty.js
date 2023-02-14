@@ -5,9 +5,10 @@ exports.itemQty = (cart) => {
     const products = productsOnCart.reduce((acc, productoActual) => {
       const item = acc.find((product) => product._id === productoActual._id);
       if (item) {
-        item.qty = item.qty + 1;
+        item.qty = item.qty + productoActual.qty <= item.stock ? item.qty + productoActual.qty : item.stock ;
+
       } else {
-        productoActual.qty = 1;
+        productoActual.qty = productoActual.qty <= productoActual.stock ? productoActual.qty : productoActual.stock ;
         acc.push(productoActual);
       }
       return acc;

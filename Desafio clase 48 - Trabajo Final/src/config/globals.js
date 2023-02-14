@@ -3,8 +3,7 @@ require("dotenv").config();
 module.exports = {
   PORT: process.env.PORT ? Number(process.env.PORT) : 8080,
   NODE_ENV: process.env.NODE_ENV || "development",
-  MONGO_URI: process.env.MONGO_URI || "mongodb://localhost:27017/myapp",
-  JWT_SECRET: process.env.JWT_SECRET || "PasSwoRd123",
+  MONGO_URI: process.env.MONGO_URI,
   MEM_TYPE: process.env.MEM_TYPE || "MEM",
   SECRET: process.env.SECRET || "secret" ,
   MAIL_GMAIL: process.env.MAIL_GMAIL,

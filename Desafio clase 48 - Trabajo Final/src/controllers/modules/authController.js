@@ -1,12 +1,12 @@
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = authController = (notificationService) => ({
   logIn(req, res, next) {
     if (req.isAuthenticated()) {
-      logger.info("Usuario logueado");              
+      logger.debug("Usuario logueado");              
       return res.redirect("/productos");
     } else {
-      logger.info("Usuario no logueado");
+      logger.debug("Usuario no logueado");
       res.render("pages/logIn");
       return;
     }
@@ -14,7 +14,7 @@ module.exports = authController = (notificationService) => ({
 
   logOut(req, res, next) {
     try {
-      logger.info("Ingresó a Logout");
+      logger.debug("Ingresó a Logout");
       req.logout();
       res.render("partials/logOut");
     } catch (error) {

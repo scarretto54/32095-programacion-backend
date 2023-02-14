@@ -1,10 +1,10 @@
 const { chatController } = require("../../controllers/index");
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = (io) => {
   //Chat
   io.on("connection", async (socket) => {
-    logger.info("¡Nuevo cliente conectado!");
+    logger.debug("¡Nuevo cliente conectado!");
 
     //Recibir nuevo mensaje
     socket.on("newMessage", async (mensaje) => {

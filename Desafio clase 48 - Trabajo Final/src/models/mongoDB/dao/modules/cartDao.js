@@ -1,4 +1,4 @@
-const logger = require("../../../../utils/logger");
+const { logger } = require("../../../../logger/index");
 const itemQty = require("../../../../utils/itemQty");
 const { cartDto } = require("../../dto/index");
 module.exports = class {
@@ -7,12 +7,16 @@ module.exports = class {
   }
   async getAllCartItems(userId) {
     try {
-      const allItems = await this.model
+      let allItems = await this.model
         .findOne({ userId })
-        .populate(["products"])
+        // .populate(["products"])
         .lean();
+       if (allItems !== null ){
+        allItems = itemQty.itemQty(allItems)
+        return allItems;
+      }       
 
-      return itemQty.itemQty(allItems);
+      return allItems;
     } catch (error) {
       logger.error(error);
     }
@@ -30,7 +34,6 @@ module.exports = class {
 
   async updateCart(id, newProduct) {
     try {
-      console.log(newProduct)
       const cartUpdated = await this.model
         .findOneAndUpdate(
           { user: id },

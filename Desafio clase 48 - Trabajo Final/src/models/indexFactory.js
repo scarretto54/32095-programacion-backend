@@ -1,4 +1,3 @@
-const { getConnection } = require("../config/connection");
 const mongoDAO = require("./mongoDB/dao/index");
 
 module.exports = class {

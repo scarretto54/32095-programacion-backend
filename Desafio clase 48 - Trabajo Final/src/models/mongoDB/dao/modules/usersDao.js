@@ -1,4 +1,4 @@
-const logger = require("../../../../utils/logger");
+const { logger } = require("../../../../logger/index");
 const { usersDto } = require("../../dto/index");
 const { usersAuthDto } = require("../../dto/index");
 module.exports = class {

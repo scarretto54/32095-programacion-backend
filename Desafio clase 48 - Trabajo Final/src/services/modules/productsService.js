@@ -1,4 +1,4 @@
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = class {
   constructor(productDao) {

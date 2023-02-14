@@ -3,7 +3,7 @@ export const handleCart = (urlPath) => {
     // Add to cart event handler------------------------------------------//
     const productListContainer = document.getElementById("productList");
 
-    let quantityItem = Number(document.getElementById("quantityItem").getAttribute('value'))
+    let quantityItem = 1;
    
     const onAddQty = (event) => {      
       if (event.target.innerText === "+") {
@@ -29,7 +29,16 @@ export const handleCart = (urlPath) => {
       
       if (event.target.innerText === "Agregar al carrito") {
         const data = {
-          _id: event.target.attributes.productid.value, qty: document.getElementById("quantityItem").getAttribute('value'),
+          _id: event.target.attributes.productid.value,
+          name: document.getElementById("name").getAttribute('value'),
+          description: document.getElementById("description").getAttribute('value'),
+          category: document.getElementById("category").getAttribute('value'),
+          imageURL: document.getElementById("imageURL").getAttribute('value'),
+          price: Number(document.getElementById("price").getAttribute('value')),
+          stock: Number(document.getElementById("stock").getAttribute('value')),
+          cod: Number(document.getElementById("cod").getAttribute('value')),
+          qty: Number(document.getElementById("quantityItem").getAttribute('value')),
+          timestamps: Number(document.getElementById("timestamps").getAttribute('value')),
         };
         if (carritoStorage === null || carritoStorage.length === 0) {
           console.log("POST");
@@ -69,6 +78,7 @@ export const handleCart = (urlPath) => {
     productListContainer.addEventListener("click", onAddQty);
     productListContainer.addEventListener("click", onRemoveQty);
   }
+
   // Cart methods
 
   if (urlPath === "/carrito") {

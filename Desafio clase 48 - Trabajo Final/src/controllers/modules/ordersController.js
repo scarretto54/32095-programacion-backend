@@ -1,4 +1,4 @@
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = ordersController = (orderService, notificationService) => ({
   async createOrder(req, res, next) {

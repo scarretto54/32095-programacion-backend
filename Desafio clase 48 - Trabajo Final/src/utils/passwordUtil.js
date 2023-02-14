@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const logger = require("./logger");
+const { logger } = require("../logger/index");
 const saltRounds = 10;
 
 const createPassword = async (password) => {

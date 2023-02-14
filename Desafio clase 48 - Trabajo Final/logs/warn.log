@@ -1,9 +1,2 @@
-
-{"level":"warn","message":"Producto con id 213 no encontrado","timestamp":"2023-02-02 20:24:24"}
-{"level":"warn","message":"Producto con id 213 no encontrado","timestamp":"2023-02-02 20:28:34"}
-{"level":"warn","message":"Producto con id 63dc11182959b770a36dbf91 no encontrado","timestamp":"2023-02-10 20:05:46"}
-{"level":"warn","message":"Producto con id Destilados no encontrado","timestamp":"2023-02-11 15:58:40"}
-{"level":"warn","message":"Producto con id Destilados no encontrado","timestamp":"2023-02-11 15:59:04"}
-{"level":"warn","message":"Carrito con id 63d4d7568e9059feee5d09b8 no encontrado","timestamp":"2023-02-12 00:53:54"}
-{"level":"warn","message":"Carrito con id 63d4d7568e9059feee5d09b8 no encontrado","timestamp":"2023-02-12 00:54:19"}
-{"level":"warn","message":"Carrito con id 63d4d7568e9059feee5d09b8 no encontrado","timestamp":"2023-02-12 00:54:56"}
+{"label":5700,"level":"warn","message":"Alerta de mail por nueva orden enviada","timestamp":"2023-02-13T20:46:37.488Z"}
+{"label":24800,"level":"error","message":"Alerta de mail por nueva orden enviada","timestamp":"2023-02-13T20:48:32.458Z"}

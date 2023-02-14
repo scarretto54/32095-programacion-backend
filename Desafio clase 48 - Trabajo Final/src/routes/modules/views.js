@@ -1,7 +1,6 @@
 const res = require("express/lib/response");
 const isAuthenticated = require("../../middleware/isAuthenticated");
 const { chatService } = require("../../services");
-const logger = require("../../utils/logger");
 const router = require("express").Router();
 
 // --------------------------Product Views---------------------------//

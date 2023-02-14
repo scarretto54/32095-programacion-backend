@@ -1,4 +1,4 @@
-<div id="productList" class="row row-cols-1">
+<div id="productList" class="row row-cols-1" >
         {{#if listaDeProductos}}
           <div class="col ">
             <div class="card h-100 glass" >
@@ -7,28 +7,29 @@
                   <img
                     src="{{listaDeProductos.imageURL}}"
                     class="card-img-top"
-                    alt="{{listaDeProductos.description}}"
+                    alt="imageURL"
+                    id='imageURL' value="{{listaDeProductos.imageURL}}"
                   />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
                         <p class="mb-0">
-                          <span class="badge bg-secondary">{{listaDeProductos.category}} </span>
+                          <span class="badge bg-secondary" id='category' value="{{listaDeProductos.category}}">{{listaDeProductos.category}} </span>
                         </p>
-                    <h5 class="card-title mt-2">{{listaDeProductos.name}}</h5>
-                        <p class="card-text">{{listaDeProductos.description}}</p>
+                    <h5 class="card-title mt-2" id='name' value="{{listaDeProductos.name}}">{{listaDeProductos.name}}</h5>
+                        <p class="card-text" id='description' value="{{listaDeProductos.description}}">{{listaDeProductos.description}}</p>
                     <div class="row justify-content-between">
                       <div class="col">
                         <p class="mb-1">
                           Precio
                         </p>
-                        <span class="mb-2"><strong>${{listaDeProductos.price}}</strong> </span>
+                        <span class="mb-2" id='price' value="{{listaDeProductos.price}}"><strong>${{listaDeProductos.price}}</strong> </span>
                       </div>
                       <div class="col">
                         <p class="mb-0">
                           Stock
                         </p>
-                        <span class="mb-2" ><strong id="stock" value="{{listaDeProductos.stock}}">{{listaDeProductos.stock}}</strong> </span>
+                        <span class="mb-2" id='stock' value="{{listaDeProductos.stock}}"><strong id="stock" value="{{listaDeProductos.stock}}">{{listaDeProductos.stock}}</strong> </span>
                       </div>
                       <div class="col">  
 
@@ -60,6 +61,8 @@
               </div>
             </div>
           </div>
+<div id='cod' value="{{listaDeProductos.cod}}"></div>
+<div id='timestamps' value="{{listaDeProductos.timestamps}}"></div>
         {{else}}
           <div class="container text-center glass">
             <h2>No se encontró ese producto</h2>

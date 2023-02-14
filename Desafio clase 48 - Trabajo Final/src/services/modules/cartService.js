@@ -1,4 +1,4 @@
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = class {
   constructor(cartDao) {
@@ -16,6 +16,7 @@ module.exports = class {
   async addCart(cart) {
     try {
       const newCart = await this.cartDao.addCart(cart);
+      logger.debug(`Carrito con id ${newCart.id} creado con éxito`);
       return newCart;
     } catch (error) {
       logger.error(error);
@@ -26,7 +27,7 @@ module.exports = class {
     try {
       const cartUpdated = await this.cartDao.updateCart(id, newProduct);
       if (cartUpdated !== undefined) {
-        logger.info(`Carrito con id ${id} modificado con éxito`);
+        logger.debug(`Carrito con id ${id} modificado con éxito`);
         return cartUpdated;}
         logger.warn(`Carrito con id ${id} no encontrado`);
     } catch (error) {
@@ -38,7 +39,7 @@ module.exports = class {
     try {
       const cartToDelete = await this.cartDao.deleteCart(user);
       if (cartToDelete !== undefined) {
-        logger.info(`Carrito del usuario ${user} eliminado con éxito`);
+        logger.debug(`Carrito del usuario ${user} eliminado con éxito`);
         return cartToDelete;}
         logger.warn(`Carrito del usuario ${user} no encontrado`);
     } catch (error) {

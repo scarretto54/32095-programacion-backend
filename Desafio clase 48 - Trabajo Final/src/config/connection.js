@@ -7,8 +7,8 @@ exports.getConnection = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    return "Conexion correcta!";
+    return "Conexion DB correcta!";
   } catch (error) {
-    return "Coneccion fallida!";
+    return "Coneccion DB fallida!";
   }
 };

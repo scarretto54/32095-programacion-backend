@@ -1,5 +1,9 @@
+const {NODE_ENV} = require("../config/globals");
 const winston = require("winston");
 const { format } = winston;
+
+
+if(NODE_ENV === 'development'){  
 
 const warnFilter = winston.format((info, opts) => {
   return info.level === "warn" ? info : false;
@@ -37,3 +41,5 @@ module.exports = winston.createLogger({
   ),
   transports: transports,
 });
+
+}

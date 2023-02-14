@@ -1,6 +1,7 @@
 const app = require("express")();
 const passport = require("passport");
 const session = require("express-session");
+const { logger } = require("../logger/index");
 const { MONGO_URI, SECRET, SESSION_EXP_TIME } = require("../config/globals");
 const {
   errorLogger,

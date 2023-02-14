@@ -1,7 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const { validPassword, createPassword } = require("../../utils/passwordUtil");
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = (usersDao) => {
   const customFields = {

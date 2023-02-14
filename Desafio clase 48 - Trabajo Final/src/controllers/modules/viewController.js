@@ -1,4 +1,4 @@
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 const { orderTotal } = require("../../utils/orderTotal");
 
 module.exports = class {
@@ -49,10 +49,10 @@ module.exports = class {
       let listaDeProductos = await this.productsService.getProduct(
         req.params.id
       );
-      
+
       res.render("pages/productoDetails", {
         listaDeProductos: listaDeProductos,
-        userInfo, 
+        userInfo,
       });
       return;
     } catch (error) {}
@@ -95,6 +95,7 @@ module.exports = class {
       );
 
       const total = orderTotal(listaDeProductosEnCarro);
+
       if (listaDeProductosEnCarro === null) {
         res.render("pages/carrito", {
           listaDeProductosEnCarro: false,

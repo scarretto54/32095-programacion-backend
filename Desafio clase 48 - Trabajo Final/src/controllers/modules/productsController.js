@@ -1,4 +1,4 @@
-const logger = require("../../utils/logger");
+const { logger } = require("../../logger/index");
 
 module.exports = class {
   constructor(productsService) {
@@ -29,7 +29,7 @@ module.exports = class {
     try {
       const oneProduct = await this.productsService.getProduct(req.params.id);
       if (oneProduct !== undefined) {
-        logger.info(`Producto con id ${req.params.id} encontrado con éxito`);
+        logger.debug(`Producto con id ${req.params.id} encontrado con éxito`);
         return res.json(oneProduct);
       } else {
         logger.warn(`Producto con id ${req.params.id} no encontrado`);
@@ -62,7 +62,7 @@ module.exports = class {
       );
       updateProduct = await productsModel.updateById(id, updateProduct);
     if (updateProduct !== undefined) {
-      logger.info(`Producto con id ${params.id} actualizado con éxito`);
+      logger.debug(`Producto con id ${params.id} actualizado con éxito`);
       res.json(updateProduct);
     } else {
       logger.warn(`Producto con id ${params.id} no encontrado`);
@@ -80,7 +80,7 @@ module.exports = class {
         req.params.id
       );
       if (productDeleted !== undefined) {
-        logger.info(`Producto con id ${req.params.id} borrado con éxito`);
+        logger.debug(`Producto con id ${req.params.id} borrado con éxito`);
         res.json(productDeleted);
       } else {
         logger.warn(`Producto con id ${req.params.id} no encontrado`);
