@@ -41,7 +41,7 @@ export const handleCart = (urlPath) => {
           timestamps: Number(document.getElementById("timestamps").getAttribute('value')),
         };
         if (carritoStorage === null || carritoStorage.length === 0) {
-          console.log("POST");
+          // console.log("POST");
           await fetch("/api/carrito", {
             method: "POST",
             headers: {
@@ -51,12 +51,12 @@ export const handleCart = (urlPath) => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              // console.log(data);
               localStorage.setItem("carrito", JSON.stringify(data));
               Swal.fire("Genial", "Producto añadido correctamente", "success");
             });
         } else {
-          console.log("PUT");
+          // console.log("PUT");
           await fetch("/api/carrito", {
             method: "PUT",
             headers: {
@@ -66,7 +66,7 @@ export const handleCart = (urlPath) => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              // console.log(data);
               localStorage.setItem("carrito", JSON.stringify(data));
               Swal.fire("Genial", "Producto añadido correctamente", "success");
             });
@@ -86,7 +86,7 @@ export const handleCart = (urlPath) => {
 
     const eventHandler = async (event) => {
       if (event.target.id === "removeAll") {
-        console.log("DELETE");
+        // console.log("DELETE");
         console.log(localStorage.getItem("carrito"))
         await fetch("/api/carrito", {
           method: "DELETE",
@@ -95,7 +95,7 @@ export const handleCart = (urlPath) => {
       }
 
       if (event.target.id === "checkOut") {
-        console.log("POST");
+        // console.log("POST");
         const total = document.getElementById("totalOrder").innerHTML;
         const productosStorage = JSON.parse(localStorage.getItem("carrito"));
         productosStorage.total = Number(total);
@@ -107,7 +107,7 @@ export const handleCart = (urlPath) => {
           body: JSON.stringify(productosStorage),
         }        
         ).then(async (res) => {
-          console.log("DELETE");
+          // console.log("DELETE");
           await fetch("/api/carrito", {
             method: "DELETE",
           }).then((res) => {

@@ -40,7 +40,7 @@ module.exports = (viewController) => {
   // --------------- Other views------------------------------/
 
   router.get("/entorno", isAuthenticated, (req, res) => {
-    const userInfo = req.user;
+    const userInfo = req.user;     
     const {
       PORT,
       NODE_ENV,
@@ -49,6 +49,7 @@ module.exports = (viewController) => {
       NODEMAILER_EMAIL,
       SESSION_EXP_TIME,
     } = require("../../config/globals");
+    const notifEmail = NODE_ENV === 'development' ? NODEMAILER_EMAIL : MAIL_GMAIL ;
     const envInfo = {
       PORT,
       NODE_ENV,
@@ -56,6 +57,7 @@ module.exports = (viewController) => {
       MAIL_GMAIL,
       NODEMAILER_EMAIL,
       SESSION_EXP_TIME,
+      notifEmail,
     };
     res.render("pages/entorno", { envInfo, userInfo });
   });

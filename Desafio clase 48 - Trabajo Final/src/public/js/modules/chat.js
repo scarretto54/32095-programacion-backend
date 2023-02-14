@@ -21,7 +21,7 @@ export const handleChat = (urlPath) => {
         };
 
         socket.emit("newMessage", message);
-        console.log(message);
+        // console.log(message);
         messageInput.value = "";
       } else {
         alert("Añada un mensaje");

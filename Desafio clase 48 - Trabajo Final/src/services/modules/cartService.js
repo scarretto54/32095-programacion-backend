@@ -16,7 +16,7 @@ module.exports = class {
   async addCart(cart) {
     try {
       const newCart = await this.cartDao.addCart(cart);
-      logger.debug(`Carrito con id ${newCart.id} creado con éxito`);
+      logger.debug(`Carrito con id ${newCart._id} creado con éxito`);
       return newCart;
     } catch (error) {
       logger.error(error);
