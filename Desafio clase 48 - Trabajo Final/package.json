@@ -9,10 +9,7 @@
     "debug": "node --inspect ./src/server/index.js",
     "test": "node benchmark.js"    
   },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "author": "",
+  "author": "scarretto",
   "license": "ISC",
   "dependencies": {
     "0x": "^5.4.1",
