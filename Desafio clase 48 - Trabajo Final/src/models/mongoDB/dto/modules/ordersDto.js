@@ -6,7 +6,6 @@ module.exports = class {
     this.date = data.date;
     this.state = data.state;
     this.user = data.user;    
-    this._id = data._id;
-    // data.id || data._id ? (this.id = data.id || data._id.toString()) : null;    
+    this.id = data.id;
   }
 }

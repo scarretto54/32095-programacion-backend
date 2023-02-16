@@ -1,6 +1,8 @@
 const { logger } = require("../../../../logger/index");
 const itemQty = require("../../../../utils/itemQty");
 const { cartDto } = require("../../dto/index");
+const { asPOJO, renameField, removeField } = require("../../../../utils/objectUtils")
+
 module.exports = class {
   constructor(model) {
     this.model = model;
@@ -8,15 +10,13 @@ module.exports = class {
   async getAllCartItems(userId) {
     try {
       let allItems = await this.model
-        .findOne({ userId })
+        .findOne({userId})
         // .populate(["products"])
         .lean();
        if (allItems !== null ){
-        allItems = itemQty.itemQty(allItems)
+        allItems = itemQty.itemQty(renameField(allItems, '_id', 'id'))
         return allItems;
-      }       
-
-      return allItems;
+      }
     } catch (error) {
       logger.error(error);
     }
@@ -24,8 +24,11 @@ module.exports = class {
 
   async addCart(cart) {
     try {
-      const newCart = await this.model.create(cart);
+      renameField(newProduct, 'id', '_id')
+      const newCart = await this.model.create(cart);      
       await newCart.populate(["products"]);
+      renameField(newCart, '_id', 'id')
+      removeField(newCart, '__v')
       return new cartDto(newCart);
     } catch (error) {
       logger.error(error);
@@ -34,6 +37,7 @@ module.exports = class {
 
   async updateCart(id, newProduct) {
     try {
+      renameField(newProduct, 'id', '_id')
       const cartUpdated = await this.model
         .findOneAndUpdate(
           { user: id },
@@ -41,9 +45,9 @@ module.exports = class {
           {
             new: true,
           }
-        )
-        .populate(["products"]);
-
+        ).populate(["products"]);
+        renameField(cartUpdated, '_id', 'id')
+        removeField(cartUpdated, '__v') 
       return new cartDto(cartUpdated);
     } catch (error) {
       logger.error(error);
@@ -52,7 +56,9 @@ module.exports = class {
 
   async deleteCart(user) {
     try {
-      const cartToDelete = await this.model.deleteOne(user);
+      const cartToDelete = await this.model.deleteOne({user });
+      renameField(cartToDelete, '_id', 'id')
+      removeField(cartToDelete, '__v') 
       return cartToDelete;
     } catch (error) {
       logger.error(error);

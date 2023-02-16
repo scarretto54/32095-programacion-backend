@@ -23,13 +23,13 @@ export const handleCart = (urlPath) => {
   }
 } 
 
-
     const addToCart = async (event) => {
       let carritoStorage = JSON.parse(localStorage.getItem("carrito"));
       
       if (event.target.innerText === "Agregar al carrito") {
         const data = {
-          _id: event.target.attributes.productid.value,
+          // id: event.target.attributes.productId.value,
+          id: document.getElementById("id").getAttribute('value'),
           name: document.getElementById("name").getAttribute('value'),
           description: document.getElementById("description").getAttribute('value'),
           category: document.getElementById("category").getAttribute('value'),

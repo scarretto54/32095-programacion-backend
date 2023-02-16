@@ -18,7 +18,7 @@ const CartSchema = new Schema(
   // {type: ObjectId, ref: "Product"}
 
   {
-  _id:{type: String},
+  id:{type: String},
   name: {type:String},
   description: {type:String,},
   category: {type:String,},

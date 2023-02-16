@@ -3,7 +3,7 @@ exports.itemQty = (cart) => {
     let productsOnCart = cart.products;
 
     const products = productsOnCart.reduce((acc, productoActual) => {
-      const item = acc.find((product) => product._id === productoActual._id);
+      const item = acc.find((product) => product.id === productoActual.id);
       if (item) {
         item.qty = item.qty + productoActual.qty <= item.stock ? item.qty + productoActual.qty : item.stock ;
 

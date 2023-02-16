@@ -8,8 +8,7 @@ module.exports = class {
     this.address = data.address;
     this.password = data.password;
     this.avatarUrl = data.avatarUrl; 
-    this._id = data._id;
+    this.id = data.id;
     this.isAdmin = data.isAdmin;
-    // data.id || data._id ? (this.id = data.id || data._id.toString()) : null;    
   }
 }

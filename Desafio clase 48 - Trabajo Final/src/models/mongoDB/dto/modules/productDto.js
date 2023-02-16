@@ -1,5 +1,6 @@
 module.exports = class {
   constructor(data) {
+    this.id = data.id;
     this.name = data.name;
     this.description = data.description;
     this.category = data.category;
@@ -7,8 +8,6 @@ module.exports = class {
     this.imageURL = data.imageURL;
     this.price = data.price;
     this.stock = data.stock;
-    this.timestamp = data.timestamp; 
-    this._id = data._id;
-    // data.id || data._id ? (this.id = data.id || data._id.toString()) : null;    
+    this.timestamp = data.timestamp;     
   }
 }

@@ -1,14 +1,16 @@
 const { logger } = require("../../../../logger/index");
 const { productDto } = require("../../dto/index");
-
+const { asPOJO, renameField, removeField } = require("../../../../utils/objectUtils")
 module.exports = class {
   constructor(model) {
     this.model = model;
   }
   async getProduct(id) {
     try {
-      const Product = await this.model.findById(id).lean();
-      return new productDto(Product);
+      const product = await this.model.findById({ '_id': id}).lean();
+      renameField(product, '_id', 'id')
+      removeField(product, '__v')    
+      return new productDto(product);
     } catch (error) {
       logger.error(error);
     }
@@ -16,8 +18,10 @@ module.exports = class {
 
   async getProductByCategory(category) {
     try {
-      const Product = await this.model.find({ category: category }).lean();
-      return Product.map(Product => new productDto(Product));
+      const products = await this.model.find({ category: category });
+      renameField(products, '_id', 'id')
+      removeField(products, '__v') 
+      return products.map(product => new productDto(product));
     } catch (error) {
       logger.error(error);
     }
@@ -25,7 +29,9 @@ module.exports = class {
 
   async getAllProducts() {
     try {
-      const allProducts = await this.model.find().lean();
+      const allProducts = await this.model.find();
+      renameField(allProducts, '_id', 'id')
+      removeField(allProducts, '__v') 
       return allProducts.map(allProducts => new productDto(allProducts));
     } catch (error) {
       logger.error(error);
@@ -34,6 +40,8 @@ module.exports = class {
   async addProduct(producto) {
     try {
       const product = await this.model.create(producto);
+      renameField(product, '_id', 'id')
+      removeField(product, '__v') 
       return new productDto(product);
     } catch (error) {
       logger.error(error);
@@ -41,11 +49,15 @@ module.exports = class {
   }
   async updateProduct(id, productUpdated) {
     try {
+      renameField(productUpdated, 'id', '_id')
       const productToUpdate = await this.model.findByIdAndUpdate(
         id,
+        // { '_id': {id}},
         productUpdated,
         { new: true }
       );
+      renameField(productToUpdate, '_id', 'id')
+      removeField(productToUpdate, '__v') 
       return new productDto(productToUpdate);
     } catch (error) {
       logger.error(error);
@@ -53,7 +65,10 @@ module.exports = class {
   }
   async deleteProduct(id) {
     try {
-      await this.model.findByIdAndDelete(id);
+      const productToDelete = await this.model.findByIdAndDelete({ '_id': id});
+      renameField(productToDelete, '_id', 'id')
+      removeField(productToDelete, '__v') 
+      return productToDelete;
     } catch (error) {
       logger.error(error);
     }

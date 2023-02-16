@@ -13,7 +13,7 @@ module.exports = class {
       if (req.user === undefined){
       const  userInfo = null    
       let listaDeProductos = await this.productsService.getAllProducts();
-
+        logger.info(listaDeProductos)
       res.render("pages/productos", { listaDeProductos, userInfo: false });
       return;
       }
@@ -31,8 +31,7 @@ module.exports = class {
   }
 
   async getProduct(req, res, next) {
-    try {
-      
+    try {      
       if (req.user === undefined){
         userInfo = null
         let listaDeProductos = await this.productsService.getProduct(
@@ -91,7 +90,7 @@ module.exports = class {
     try {
       const userInfo = req.user;
       let listaDeProductosEnCarro = await this.cartService.getAllCartItems(
-        req.user._id
+        req.user.id
       );
 
       const total = orderTotal(listaDeProductosEnCarro);
